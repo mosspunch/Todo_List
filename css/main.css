@@ -1,0 +1,371 @@
+:root {
+  /* globally scoped  custom properties */
+  --color-primary: seagreen;
+  --color-alt: #1a4d30d8;
+  --color-light: seashell;
+  --color-dark: #141414;
+  --color-warning: red;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-primary);
+}
+
+.allfather {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  display: -ms-grid;
+  display: grid;
+  grid: 
+      "header header header header" auto 
+      "...... lists  activ ......" auto
+      "...... ...... del   ......" auto/1fr 
+      minmax(100px, 350px) minmax(250px, 500px) 1fr;
+  grid-gap: 1rem;
+}
+
+
+
+  @media only screen and (max-width: 700px)   {
+      .allfather {
+        grid-gap: 1rem 4rem;
+        grid:
+        ". header ."
+        ". lists ."
+        ". activ ."
+        ". del .";
+
+        font-size: 1rem;
+      }
+  }
+
+
+.title {
+  grid-area: header;
+  text-align: center;
+  font-size: calc(6vw + 2rem);
+  /* font-size: 7rem; */
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.1);
+  letter-spacing: 1.5px;
+  margin: 0em 0 0.5em;
+}
+
+@media only screen and (max-width: 700px)   {
+    .title {
+    font-size: calc(6vw + 0.5rem);
+  }
+}
+
+.all-tasks {
+  grid-area: lists;
+  background-color: var(--color-alt);
+  padding: 1rem;
+  -webkit-box-shadow: 0 2px 2px -1px var(--color-dark);
+          box-shadow: 0 2px 2px -1px var(--color-dark);
+}
+
+.task-list {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  list-style: circle;
+  padding-left: 1.25em;
+}
+
+.list-name {
+  cursor: pointer;
+}
+
+.list-name:hover {
+  opacity: 0.7;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btn {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.btn.create {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-right: 0.25em;
+  -webkit-transition: opacity 250ms ease-in;
+  transition: opacity 250ms ease-in;
+}
+
+.btn.create:hover {
+  opacity: 0.7;
+}
+
+.btn.delete {
+  font-weight: 400;
+  opacity: 0.6;
+  font-size: 1rem;
+  /* for the hover below */
+  -webkit-transition: color 100ms ease;
+  transition: color 100ms ease;
+}
+
+.btn.delete:hover {
+  color: var(--color-warning);
+}
+
+.btn-alt {
+  color: var(--color-alt);
+}
+
+.new {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  font-size: inherit;
+  outline: none;
+  padding: 0.25em;
+  -webkit-transition: border-bottom 120ms ease-in;
+  transition: border-bottom 120ms ease-in;
+  /* order from flex on the form */
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+
+  overflow: auto;
+}
+
+.new::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.4;
+}
+
+.new:-ms-input-placeholder {
+  color: inherit;
+  opacity: 0.4;
+}
+
+.new::-ms-input-placeholder {
+  color: inherit;
+  opacity: 0.4;
+}
+
+.new::placeholder {
+  color: inherit;
+  opacity: 0.4;
+}
+
+.new:focus {
+  border-bottom-width: 2.5px;
+}
+
+.new:focus::-webkit-input-placeholder {
+  opacity: 0.2;
+}
+
+.new:focus:-ms-input-placeholder {
+  opacity: 0.2;
+}
+
+.new:focus::-ms-input-placeholder {
+  opacity: 0.2;
+}
+
+.new:focus::placeholder {
+  opacity: 0.2;
+}
+
+.new.list {
+  font-size: 1.1rem;
+}
+
+.new.task {
+  margin-bottom: 0;
+}
+
+.active-list {
+  font-weight: 700;
+}
+
+.todo-list {
+  /* "locally scoped" custom properties (outside of root) */
+  --spacer: 2rem;
+  grid-area: activ;
+  background: var(--color-light);
+  color: var(--color-dark);
+  /* padding: 0.75em; */
+  -webkit-box-shadow: 0 2px 2px -1px var(--color-dark);
+          box-shadow: 0 2px 2px -1px var(--color-dark);
+}
+
+.todo-header {
+  padding: var(--spacer);
+  background: #e4e4e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todo-title {
+  /* margin: 0; */
+  /* to prevent long titles from touching */
+  /* margin-right: 1em; */
+  /* shorthand: */
+  margin: 0 1em 0 0;
+}
+
+.task-count {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.todo-body {
+  padding: var(--spacer);
+  /* for 'delete stuff' */
+  position: relative;
+}
+
+/* all checkbox types */
+[type="checkbox"] {
+  opacity: 0;
+  /* absolute takes them out the flow of the document */
+  position: absolute;
+  /* NOT adding a 'display: none' means that they are still tab-able for people who like that */
+}
+
+.task label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.task {
+  position: relative;
+  margin-bottom: 1.5em;
+}
+
+.task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -0.5em;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+.custom-checkbox {
+  --size: 0.75em;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: var(--size);
+  cursor: pointer;
+  border: 2px solid currentColor;
+  /* border-radius: 50%; */
+  /* checkbox size */
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+/* .custom-checkbox:hover {
+    --grow: 0.8em;
+
+    width: var(--grow);
+    height: var(--grow);
+    transition: 150ms ease-in;
+    BUT this stuff doesn't scale in place. soooo....
+} */
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox {
+  /* more tabbing functionality */
+  /* transform: scale(1.2); */
+  color: var(--color-primary);
+}
+
+[type="checkbox"]:checked + label .custom-checkbox {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  -webkit-box-shadow: inset 0 0 0px 3.5px var(--color-light);
+          box-shadow: inset 0 0 0px 3.5px var(--color-light);
+}
+
+[type="checkbox"]:checked + label {
+  opacity: 0.5;
+}
+
+.task label::after {
+  content: "";
+  position: absolute;
+  left: 1.5em;
+  right: 0;
+  /* top: 50%; */
+  height: 3px;
+  background: currentColor;
+  /* don't always want to see the strikethrough so */
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 125ms ease-in-out;
+  transition: -webkit-transform 125ms ease-in-out;
+  transition: transform 125ms ease-in-out;
+  transition: transform 125ms ease-in-out, -webkit-transform 125ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.delete-stuff {
+  grid-area: del;
+  /* background: pink; */
+  display: flex;
+  justify-content: space-evenly;
+  left: 0;
+  /* bottom: -2rem; */
+  padding: 0.2rem;
+  color: var(--color-light);
+}
+
+@media only screen and (max-width: 700px)   {
+  .btn.delete {
+    font-size: 0.85rem;
+}
+}
