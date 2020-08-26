@@ -12,10 +12,8 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-
     <div class="allfather">
         <h1 class="title">Stuff To Get Done</h1>
-
         <div class="all-tasks">
             <h2 class="task-todo-title">My Lists</h2>
             <ul class="task-list" data-lists>
@@ -45,7 +43,6 @@
                 <div class="tasks" data-tasks>
                     <!-- empty -->
                 </div>
-
                 <div class="new-task-creator">
                     <form action="" data-new-task-form>
                         <input 
@@ -58,16 +55,13 @@
                         <button class="btn create btn-alt"
                         aria-label="create new task">+</button>
                     </form>
-
                 </div>
             </div>
         </div>
-
         <div class="delete-stuff">
             <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
             <button class="btn delete" data-delete-list-button>Delete list</button>
         </div>
-
         <!-- template tags ensure that this html is not rendered on the page -->
         <!-- this can be accessed by JS to make things easier. easier...hahahah fml T_T -->
         <template id="task-template">

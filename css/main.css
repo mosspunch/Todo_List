@@ -4,7 +4,7 @@
   --color-alt: #1a4d30d8;
   --color-light: seashell;
   --color-dark: #141414;
-  --color-warning: red;
+  --color-delete: red;
 }
 
 *,
@@ -125,7 +125,7 @@ form {
 }
 
 .btn.delete:hover {
-  color: var(--color-warning);
+  color: var(--color-delete);
 }
 
 .btn-alt {
@@ -362,7 +362,7 @@ form {
 }
 
 @media only screen and (max-width: 700px)   {
-  .btn.delete {
-    font-size: 0.85rem;
-}
+    .btn.delete {
+      font-size: 0.85rem;
+  }
 }
