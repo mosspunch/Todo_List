@@ -14,79 +14,70 @@
 <body>
 
     <div class="allfather">
+        <h1 class="title">Stuff To Get Done</h1>
 
-
-    <h1 class="title">Stuff To Get Done</h1>
-
-
- <div class="all-tasks">
-        <h2 class="task-todo-title">My Lists</h2>
-        <ul class="task-list" data-lists>
-            <!-- empty -->
-        </ul>
-
-        <form action="" data-new-list-form>
-            <input 
-            type="text"
-            class="new list"
-            data-new-list-input
-            placeholder="create new list"
-            aria-label="new list name"
-            />
-            <button class="btn create"
-            aria-label="create new list">+</button>
-        </form>
-    </div>
-
-    <div class="todo-list" data-list-display-container>
-        <div class="todo-header">
-            <h2 class="todo-title" data-list-title>New List</h2>
-            <p class="task-count" data-list-count>0 tasks remaining</p>
-        </div>
-
-        <div class="todo-body">
-            <div class="tasks" data-tasks>
+        <div class="all-tasks">
+            <h2 class="task-todo-title">My Lists</h2>
+            <ul class="task-list" data-lists>
                 <!-- empty -->
+            </ul>
+
+            <form action="" data-new-list-form>
+                <input 
+                type="text"
+                class="new list"
+                data-new-list-input
+                placeholder="create new list"
+                aria-label="new list name"
+                />
+                <button class="btn create"
+                aria-label="create new list">+</button>
+            </form>
+        </div>
+
+        <div class="todo-list" data-list-display-container>
+            <div class="todo-header">
+                <h2 class="todo-title" data-list-title>New List</h2>
+                <p class="task-count" data-list-count>0 tasks remaining</p>
             </div>
 
-            <div class="new-task-creator">
-                <form action="" data-new-task-form>
-                    <input 
-                    type="text" 
-                    data-new-task-input 
-                    class="new task" 
-                    placeholder="create new task" 
-                    aria-label="new task name" 
-                    />
-                    <button class="btn create btn-alt"
-                    aria-label="create new task">+</button>
-                </form>
+            <div class="todo-body">
+                <div class="tasks" data-tasks>
+                    <!-- empty -->
+                </div>
 
+                <div class="new-task-creator">
+                    <form action="" data-new-task-form>
+                        <input 
+                        type="text" 
+                        data-new-task-input 
+                        class="new task" 
+                        placeholder="create new task" 
+                        aria-label="new task name" 
+                        />
+                        <button class="btn create btn-alt"
+                        aria-label="create new task">+</button>
+                    </form>
+
+                </div>
             </div>
         </div>
-    </div>
 
-
-    <div class="delete-stuff">
-        <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
-        <button class="btn delete" data-delete-list-button>Delete list</button>
-    </div>
-
-
-
-    <!-- template tags ensure that this html is not rendered on the page -->
-    <!-- this can be accessed by JS to make things easier. easier...hahahah fml T_T -->
-    <template id="task-template">
-        <div class="task">
-            <input type="checkbox" />
-            <label>
-                <span class="custom-checkbox"></span>
-            </label>
+        <div class="delete-stuff">
+            <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+            <button class="btn delete" data-delete-list-button>Delete list</button>
         </div>
-    </template>
 
-
+        <!-- template tags ensure that this html is not rendered on the page -->
+        <!-- this can be accessed by JS to make things easier. easier...hahahah fml T_T -->
+        <template id="task-template">
+            <div class="task">
+                <input type="checkbox" />
+                <label>
+                    <span class="custom-checkbox"></span>
+                </label>
+            </div>
+        </template>
 </div>
-
 </body>
 </html>

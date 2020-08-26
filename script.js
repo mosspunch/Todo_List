@@ -13,8 +13,6 @@ const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
 const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
 
-
-
 // localstorage stores information on the user's browser. (keyvalue pairs)
 // name space sued to prevent overrides (which is why 'task.list')
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
@@ -159,4 +157,3 @@ function clearElement(element) {
 }
 
 render()
-
